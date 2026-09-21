@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-burgundy-50: #fdf3f5;
+  --color-burgundy-100: #fbe6eb;
+  --color-burgundy-200: #f7ced8;
+  --color-burgundy-300: #f0a6b7;
+  --color-burgundy-400: #e4728d;
+  --color-burgundy-500: #d34368;
+  --color-burgundy-600: #bb264f;
+  --color-burgundy-700: #9b193c;
+  --color-burgundy-800: #800020;
+  --color-burgundy-900: #6b1426;
+  --color-burgundy-950: #3d0713;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  touch-action: manipulation;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Campus Bites",
+  "description": "Smart student food app with digital menu, live canteen availability, under ₹X budget finder, cravings chatbot, today's specials, and staff menu management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
