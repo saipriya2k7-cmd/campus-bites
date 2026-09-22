@@ -78,9 +78,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-burgundy-100/90 shadow-2xs">
       {/* Top micro announcement bar */}
-      <div className="bg-linear-to-r from-burgundy-950 via-burgundy-900 to-burgundy-850 text-burgundy-100 text-xs py-1.5 px-4 font-medium border-b border-burgundy-950">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2 truncate">
+      <div className="bg-linear-to-r from-burgundy-950 via-burgundy-900 to-burgundy-850 text-burgundy-100 text-xs py-1 px-3 sm:px-4 font-medium border-b border-burgundy-950">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
+          <div className="flex items-center gap-1.5 sm:gap-2 truncate text-[11px] sm:text-xs">
             <span className="flex h-2 w-2 relative shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-300 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-300"></span>
@@ -91,24 +91,25 @@ export const Navbar: React.FC<NavbarProps> = ({
             id="nav-timings-badge-btn"
             type="button"
             onClick={onOpenTimings}
-            className="shrink-0 flex items-center gap-1.5 bg-white/10 hover:bg-white/20 px-2.5 py-0.5 rounded-full text-xs font-semibold cursor-pointer transition-colors text-white border border-white/10"
+            className="shrink-0 flex items-center gap-1 bg-white/10 hover:bg-white/20 px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-semibold cursor-pointer transition-colors text-white border border-white/10"
           >
-            <Clock className="w-3.5 h-3.5 text-amber-200" />
-            <span>Timings & Rush</span>
+            <Clock className="w-3 h-3 text-amber-200" />
+            <span className="hidden xs:inline">Timings & Rush</span>
+            <span className="xs:hidden">Timings</span>
           </button>
         </div>
       </div>
 
       {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-3">
+      <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between gap-1.5 sm:gap-3">
         {/* Left Side: Features Menu Button + Brand Logo */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           {/* Menu & Features Drawer Trigger */}
           <button
             id="open-left-features-btn"
             type="button"
             onClick={onOpenLeftMenu}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-2xl bg-[#FAF7F8] hover:bg-burgundy-50 text-slate-700 hover:text-burgundy-900 border border-burgundy-200/80 transition-all cursor-pointer font-bold text-xs shadow-2xs active:scale-95 group"
+            className="flex items-center gap-1.5 p-2 sm:px-3 sm:py-2 rounded-xl sm:rounded-2xl bg-[#FAF7F8] hover:bg-burgundy-50 text-slate-700 hover:text-burgundy-900 border border-burgundy-200/80 transition-all cursor-pointer font-bold text-xs shadow-2xs active:scale-95 group"
             title="Open Campus Features & Services"
             aria-label="Open Left Features Menu"
           >
@@ -121,17 +122,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             id="brand-logo-btn"
             type="button"
             onClick={() => setActiveTab('student')}
-            className="flex items-center gap-2.5 text-left group cursor-pointer"
+            className="flex items-center gap-2 text-left group cursor-pointer"
           >
-            <div className="w-10 h-10 rounded-2xl bg-linear-to-br from-burgundy-800 to-burgundy-950 flex items-center justify-center text-white shadow-md shadow-burgundy-950/20 group-hover:scale-105 transition-transform">
-              <UtensilsCrossed className="w-5 h-5 text-white" />
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-linear-to-br from-burgundy-800 to-burgundy-950 flex items-center justify-center text-white shadow-md shadow-burgundy-950/20 group-hover:scale-105 transition-transform shrink-0">
+              <UtensilsCrossed className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
             </div>
             <div>
-              <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-xl font-['Outfit'] tracking-tight text-slate-900">
+              <div className="flex items-center gap-1 sm:gap-1.5">
+                <span className="font-extrabold text-base sm:text-xl font-['Outfit'] tracking-tight text-slate-900">
                   Campus<span className="text-burgundy-800">Bites</span>
                 </span>
-                <span className="text-[10px] uppercase font-extrabold bg-burgundy-50 text-burgundy-800 border border-burgundy-200 px-1.5 py-0.5 rounded-md tracking-wider">
+                <span className="hidden sm:inline-block text-[10px] uppercase font-extrabold bg-burgundy-50 text-burgundy-800 border border-burgundy-200 px-1.5 py-0.5 rounded-md tracking-wider">
                   Canteen
                 </span>
               </div>
@@ -156,7 +157,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     : 'text-slate-500 hover:text-slate-900'
                 }`}
               >
-                👨🎓 Student Menu
+                👨‍🎓 Student Menu
               </button>
               <button
                 id="tab-staff-view"
@@ -180,14 +181,14 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {/* Right Side: Tray/Cart (Students) or Kitchen Orders (Staff) + Profile Button */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           {/* In Student View: My Orders button with live active tokens count */}
           {activeTab !== 'staff' && onOpenMyOrders && (
             <button
               id="nav-my-orders-btn"
               type="button"
               onClick={onOpenMyOrders}
-              className={`relative flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs sm:text-sm font-bold border transition-all cursor-pointer active:scale-95 ${
+              className={`relative flex items-center gap-1.5 p-2 sm:px-3 sm:py-2 rounded-xl text-xs sm:text-sm font-bold border transition-all cursor-pointer active:scale-95 ${
                 activeStudentOrdersCount > 0
                   ? 'bg-amber-50 hover:bg-amber-100 border-amber-300 text-burgundy-950 shadow-2xs'
                   : 'bg-slate-50 hover:bg-slate-100 border-slate-200 text-slate-700'
@@ -203,7 +204,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </span>
                 )}
               </div>
-              <span className="font-['Outfit']">My Orders</span>
+              <span className="hidden sm:inline font-['Outfit']">My Orders</span>
               {activeStudentOrdersCount > 0 && (
                 <span className="flex h-5 px-1.5 rounded-full bg-burgundy-900 text-amber-300 font-extrabold text-[10px] items-center justify-center shadow-xs">
                   {activeStudentOrdersCount}
@@ -252,7 +253,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               id="cart-drawer-trigger-btn"
               type="button"
               onClick={onOpenCart}
-              className="relative flex items-center gap-2 px-3.5 py-2 rounded-xl bg-burgundy-900 hover:bg-burgundy-950 text-white font-bold text-xs sm:text-sm shadow-md shadow-burgundy-950/20 transition-all cursor-pointer active:scale-95"
+              className="relative flex items-center gap-1.5 sm:gap-2 p-2 sm:px-3.5 sm:py-2 rounded-xl bg-burgundy-900 hover:bg-burgundy-950 text-white font-bold text-xs sm:text-sm shadow-md shadow-burgundy-950/20 transition-all cursor-pointer active:scale-95"
             >
               <ShoppingBag className="w-4 h-4" />
               <span className="hidden sm:inline">My Tray</span>

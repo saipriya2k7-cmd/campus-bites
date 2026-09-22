@@ -56,20 +56,8 @@ export function normalizeFoodItem(raw: any): FoodItem {
   const dietary: DietaryType = dietaryCheck.dietary;
   const isVeg = dietaryCheck.isVeg;
 
-  // Enforce updated authentic smoked chicken tikka and biryani photos
-  let imageUrl = raw.imageUrl;
-  const nameLower = (raw.name || '').toLowerCase();
-  if (raw.id === 'food-chicken-roll' || (nameLower.includes('smoked chicken') && nameLower.includes('tikka'))) {
-    imageUrl = '/assets/smoked_chicken_tikka.jpg';
-  } else if (nameLower.includes('biryani') || nameLower.includes('biriyani') || nameLower.includes('pulao')) {
-    if (dietary === 'veg' || nameLower.includes('veg') || nameLower.includes('paneer')) {
-      imageUrl = '/assets/veg_biryani.jpg';
-    } else {
-      imageUrl = '/assets/chicken_biryani.jpg';
-    }
-  } else {
-    imageUrl = sanitizeFoodImageUrl(imageUrl, raw.category, dietary, raw.name);
-  }
+  // Sanitize image URLs with authentic distinct CDN photos
+  const imageUrl = sanitizeFoodImageUrl(raw.imageUrl, raw.category, dietary, raw.name);
 
   return {
     ...raw,

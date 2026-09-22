@@ -396,7 +396,7 @@ function MainAppContent() {
   }, [orders]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 w-full overflow-x-hidden">
       {/* Navbar */}
       <Navbar
         canteenInfo={canteenInfo}
@@ -428,7 +428,7 @@ function MainAppContent() {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-3.5 sm:px-6 lg:px-8 py-6 sm:py-10 overflow-x-hidden">
         {activeTab === 'staff' && isStaff ? (
           /* Protected Staff Panel View */
           <StaffPanel
@@ -480,39 +480,39 @@ function MainAppContent() {
           /* Student Website & Home Page View */
           <div>
             {/* Professional Campus Hero Banner - White & Burgundy */}
-            <section className="mb-10 sm:mb-14 bg-linear-to-br from-burgundy-950 via-burgundy-900 to-burgundy-850 rounded-3xl p-6 sm:p-10 text-white shadow-xl shadow-burgundy-950/20 relative overflow-hidden border border-burgundy-900">
+            <section className="mb-8 sm:mb-14 bg-linear-to-br from-burgundy-950 via-burgundy-900 to-burgundy-850 rounded-2xl sm:rounded-3xl p-4 sm:p-8 lg:p-10 text-white shadow-xl shadow-burgundy-950/20 relative overflow-hidden border border-burgundy-900">
               <div className="relative z-10 max-w-2xl">
-                <div className="inline-flex items-center gap-1.5 bg-white/15 text-amber-200 backdrop-blur-md px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider mb-3 border border-white/20">
+                <div className="inline-flex items-center gap-1.5 bg-white/15 text-amber-200 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-extrabold uppercase tracking-wider mb-3 border border-white/20">
                   <Sparkles className="w-3.5 h-3.5 text-amber-300" />
                   <span>College Central Cafeteria</span>
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black font-['Outfit'] tracking-tight leading-tight text-white">
+                <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black font-['Outfit'] tracking-tight leading-tight text-white">
                   Fresh Hot Food <br className="hidden sm:inline" />
                   Between Lectures 🍱🥪
                 </h1>
 
-                <p className="text-xs sm:text-sm text-burgundy-100/90 font-medium mt-3 mb-6 max-w-lg leading-relaxed">
+                <p className="text-xs sm:text-sm text-burgundy-100/90 font-medium mt-2.5 mb-5 sm:mb-6 max-w-lg leading-relaxed">
                   Skip the long lines! Check live availability of Pure Veg, Egg dishes, and Non-Veg specialties, discover quick meals under ₹50, and pick up your tray with zero wait.
                 </p>
 
                 {/* Clean, spacious action controls */}
-                <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <button
                     id="hero-explore-features-btn"
                     type="button"
                     onClick={() => setIsLeftDrawerOpen(true)}
-                    className="flex items-center gap-2 px-4.5 py-2.5 rounded-2xl bg-white text-burgundy-950 font-extrabold text-xs shadow-md hover:bg-burgundy-50 transition-all cursor-pointer active:scale-95"
+                    className="flex items-center gap-1.5 sm:gap-2 px-3.5 py-2 sm:px-4.5 sm:py-2.5 rounded-xl sm:rounded-2xl bg-white text-burgundy-950 font-extrabold text-xs shadow-md hover:bg-burgundy-50 transition-all cursor-pointer active:scale-95"
                   >
-                    <Menu className="w-4 h-4 text-burgundy-900" />
-                    <span>Explore Features Menu</span>
+                    <Menu className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-burgundy-900" />
+                    <span>Features Menu</span>
                   </button>
 
                   <button
                     id="hero-budget-btn"
                     type="button"
                     onClick={() => setIsBudgetOpen(true)}
-                    className="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs backdrop-blur-xs transition-all cursor-pointer border border-white/20"
+                    className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs backdrop-blur-xs transition-all cursor-pointer border border-white/20"
                   >
                     <IndianRupee className="w-3.5 h-3.5 text-amber-200" />
                     <span>Under ₹X Budget</span>
@@ -522,10 +522,10 @@ function MainAppContent() {
                     id="hero-timings-btn"
                     type="button"
                     onClick={() => setIsTimingsOpen(true)}
-                    className="flex items-center gap-1.5 px-4 py-2.5 rounded-2xl bg-burgundy-800 hover:bg-burgundy-700 text-white font-bold text-xs shadow-md shadow-burgundy-950/30 transition-all cursor-pointer border border-burgundy-600/50"
+                    className="flex items-center gap-1 sm:gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl bg-burgundy-800 hover:bg-burgundy-700 text-white font-bold text-xs shadow-md shadow-burgundy-950/30 transition-all cursor-pointer border border-burgundy-600/50"
                   >
                     <Clock className="w-3.5 h-3.5 text-amber-200" />
-                    <span>Timings & Shifts</span>
+                    <span>Timings</span>
                   </button>
 
                   {/* My Orders quick button if student has orders */}
@@ -534,7 +534,7 @@ function MainAppContent() {
                       id="hero-my-orders-btn"
                       type="button"
                       onClick={() => setIsMyOrdersOpen(true)}
-                      className="flex items-center gap-1.5 px-4 py-2.5 rounded-2xl bg-amber-400 hover:bg-amber-300 text-burgundy-950 font-extrabold text-xs shadow-md transition-all cursor-pointer active:scale-95"
+                      className="flex items-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl bg-amber-400 hover:bg-amber-300 text-burgundy-950 font-extrabold text-xs shadow-md transition-all cursor-pointer active:scale-95"
                     >
                       <Receipt className="w-3.5 h-3.5 text-burgundy-950" />
                       <span>My Orders {activeStudentOrders.length > 0 ? `(${activeStudentOrders.length})` : ''}</span>
@@ -649,12 +649,12 @@ function MainAppContent() {
               </div>
 
               {/* Meal Slot Quick Filter Buttons */}
-              <div className="flex flex-wrap items-center gap-2">
+              <div className="flex gap-2 overflow-x-auto pb-1.5 sm:flex-wrap scrollbar-none">
                 {/* Auto / Current Shift Button */}
                 <button
                   id="slot-filter-auto"
                   onClick={() => setSelectedMealSlot('auto')}
-                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                  className={`shrink-0 whitespace-nowrap flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                     selectedMealSlot === 'auto'
                       ? 'bg-burgundy-900 text-white shadow-xs'
                       : 'bg-white text-slate-700 hover:bg-burgundy-50 border border-burgundy-100'
@@ -669,56 +669,56 @@ function MainAppContent() {
                 <button
                   id="slot-filter-morning"
                   onClick={() => setSelectedMealSlot('morning')}
-                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                  className={`shrink-0 whitespace-nowrap flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                     selectedMealSlot === 'morning'
                       ? 'bg-amber-600 text-white shadow-xs'
                       : 'bg-white text-slate-700 hover:bg-burgundy-50 border border-burgundy-100'
                   }`}
                 >
                   <Sunrise className={`w-3.5 h-3.5 ${selectedMealSlot === 'morning' ? 'text-amber-200' : 'text-amber-600'}`} />
-                  <span>Morning Breakfast ({morningCount})</span>
+                  <span>Morning ({morningCount})</span>
                 </button>
 
                 {/* Afternoon Slot */}
                 <button
                   id="slot-filter-afternoon"
                   onClick={() => setSelectedMealSlot('afternoon')}
-                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                  className={`shrink-0 whitespace-nowrap flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                     selectedMealSlot === 'afternoon'
                       ? 'bg-orange-600 text-white shadow-xs'
                       : 'bg-white text-slate-700 hover:bg-burgundy-50 border border-burgundy-100'
                   }`}
                 >
                   <Sun className={`w-3.5 h-3.5 ${selectedMealSlot === 'afternoon' ? 'text-orange-200' : 'text-orange-600'}`} />
-                  <span>Afternoon Lunch ({afternoonCount})</span>
+                  <span>Lunch ({afternoonCount})</span>
                 </button>
 
                 {/* Evening Slot */}
                 <button
                   id="slot-filter-evening"
                   onClick={() => setSelectedMealSlot('evening')}
-                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                  className={`shrink-0 whitespace-nowrap flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                     selectedMealSlot === 'evening'
                       ? 'bg-burgundy-950 text-white shadow-xs'
                       : 'bg-white text-slate-700 hover:bg-burgundy-50 border border-burgundy-100'
                   }`}
                 >
                   <Sunset className={`w-3.5 h-3.5 ${selectedMealSlot === 'evening' ? 'text-amber-200' : 'text-burgundy-700'}`} />
-                  <span>Evening Snacks & Dinner ({eveningCount})</span>
+                  <span>Evening & Dinner ({eveningCount})</span>
                 </button>
 
                 {/* All Shifts / Full Menu */}
                 <button
                   id="slot-filter-all"
                   onClick={() => setSelectedMealSlot('all')}
-                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                  className={`shrink-0 whitespace-nowrap flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                     selectedMealSlot === 'all'
                       ? 'bg-slate-900 text-white shadow-xs'
                       : 'bg-white text-slate-700 hover:bg-burgundy-50 border border-burgundy-100'
                   }`}
                 >
                   <UtensilsCrossed className="w-3.5 h-3.5" />
-                  <span>All Shifts Menu ({foods.length})</span>
+                  <span>All Shifts ({foods.length})</span>
                 </button>
               </div>
             </div>
@@ -801,7 +801,7 @@ function MainAppContent() {
               {/* Secondary Filters Bar: Dedicated Veg, Egg, Non-Veg Separation Tabs */}
               <div className="flex flex-wrap items-center justify-between gap-3 p-3 bg-white rounded-2xl border border-burgundy-100 shadow-2xs">
                 {/* 3-Way Dietary Separation */}
-                <div className="flex flex-wrap items-center gap-1.5">
+                <div className="flex gap-1.5 overflow-x-auto pb-1 sm:flex-wrap scrollbar-none w-full sm:w-auto">
                   <button
                     id="filter-diet-all"
                     onClick={() => {
@@ -812,7 +812,7 @@ function MainAppContent() {
                       setSearchQuery('');
                       setInStockOnly(false);
                     }}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                    className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                       dietaryFilter === 'all' && selectedCategory === 'All' && selectedMealSlot === 'all' && !searchQuery
                         ? 'bg-burgundy-900 text-white shadow-xs'
                         : 'text-slate-600 hover:bg-burgundy-50'
@@ -824,7 +824,7 @@ function MainAppContent() {
                   <button
                     id="filter-diet-veg"
                     onClick={() => setDietaryFilter('veg')}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
+                    className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
                       dietaryFilter === 'veg'
                         ? 'bg-emerald-600 text-white shadow-sm'
                         : 'text-emerald-800 bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200/60'
@@ -837,7 +837,7 @@ function MainAppContent() {
                   <button
                     id="filter-diet-egg"
                     onClick={() => setDietaryFilter('egg')}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
+                    className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
                       dietaryFilter === 'egg'
                         ? 'bg-amber-500 text-white shadow-sm'
                         : 'text-amber-800 bg-amber-50 hover:bg-amber-100/80 border border-amber-200/60'
@@ -850,7 +850,7 @@ function MainAppContent() {
                   <button
                     id="filter-diet-non-veg"
                     onClick={() => setDietaryFilter('non_veg')}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
+                    className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
                       dietaryFilter === 'non_veg'
                         ? 'bg-burgundy-800 text-white shadow-sm'
                         : 'text-burgundy-900 bg-burgundy-50 hover:bg-burgundy-100/80 border border-burgundy-200/60'

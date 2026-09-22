@@ -85,7 +85,7 @@ const PRESET_FOOD_IMAGES = [
   { label: '🟡 Egg Roll', url: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=600&q=80', dietary: 'egg' },
   { label: '🔴 Chicken Biryani Bowl', url: '/assets/chicken_biryani.jpg', dietary: 'non_veg' },
   { label: '🔴 Chicken Popcorn / Bites', url: 'https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=600&q=80', dietary: 'non_veg' },
-  { label: '🔴 Chicken Tikka Roll', url: '/assets/smoked_chicken_tikka.jpg', dietary: 'non_veg' },
+  { label: '🔴 Chicken Tikka Roll', url: 'https://upload.wikimedia.org/wikipedia/commons/a/a8/Chicken-kathi-roll-recipe.jpg', dietary: 'non_veg' },
   { label: '☕ Chai / Coffee', url: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80', dietary: 'veg' },
   { label: '🥤 Cold Coffee / Shake', url: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=600&q=80', dietary: 'veg' }
 ];
